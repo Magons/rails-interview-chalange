@@ -1,0 +1,17 @@
+<% @charges_types.each do |type| %>
+  <h1><%= type.capitalize %> Charges</h1>
+  <table border="1" id="charges_<%=type%>">
+    <thead>
+    <th>Customers name</th>
+    <th>Amount</th>
+    <th>date</th>
+    </thead>
+    <% @charges.send(type).each do |charge| %>
+      <tr class="bg-<%=type%>">
+        <td><%= charge.customer.full_name %></td>
+        <td><%= charge.amount %></td>
+        <td><%= I18n.l(charge.updated_at, format: :long) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
