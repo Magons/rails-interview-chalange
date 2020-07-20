@@ -1,0 +1,8 @@
+    <tr class="<%= style%>">
+    <% if local_assigns[:show_customer_details]%>
+      <td><%= charge.customer.name%> </td>
+    <% end %>
+      <td><%= d charge.amount%></td>
+      <td><%= l charge.updated_at, format: :long %></td>
+    </tr>
+
