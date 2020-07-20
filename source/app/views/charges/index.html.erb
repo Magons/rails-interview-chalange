@@ -1,0 +1,39 @@
+<%# added style here for this task only. prefer to keep seperate %>
+<style>
+.failed {
+  background: #FF0000;
+}
+
+.disputed {
+    background: #FF5400;
+}
+
+.success {
+
+}
+</style>
+<h1>Charges</h1>
+
+<h1>Failed Charges</h1>
+    <table>
+        <%= render partial: "table_header",  locals: {  show_customer_details: true }%>
+        <tbody>
+        <%= render partial: @failed_charges, as: :charge,  locals: { style: 'failed', show_customer_details: true } %>
+        </tbody>
+    </table>
+
+<h1>Disputed Charges</h1>
+    <table>
+        <%= render partial: "table_header", locals: { show_customer_details: true } %>
+        <tbody>
+            <%= render partial: @disputed_charges, as: :charge,  locals: { style: 'disputed', show_customer_details: true } %>
+        </tbody>
+    </table>
+
+<h1>Successful Charges</h1>
+    <table>
+        <%= render partial: "table_header" %>
+        <tbody>
+            <%= render partial: @successful_charges, as: :charge , locals: { style:'success' }%>
+        </tbody>
+    </table>
