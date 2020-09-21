@@ -1,0 +1,11 @@
+table {
+  border: 1px solid black;
+}
+
+.failed {
+  background-color: #FF0000;
+}
+
+.disputed {
+  background-color: #FF5400;
+}

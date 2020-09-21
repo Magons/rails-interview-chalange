@@ -1,0 +1,14 @@
+<table class=<%= table_class %> id=<%= table_class %>>
+  <thead>
+    <th>Customer's name</th>
+    <th>Charge amount</th>
+    <th>Date</th>
+  </thead>
+  <% collection.each do |charge| %>
+    <tr id=<%= charge.id %>>
+      <td><%= charge.customer.full_name %></td>
+      <td><%= charge.amount %></td>
+      <td><%= charge.created_at %></td>
+    </tr>
+  <% end %>
+</table>
